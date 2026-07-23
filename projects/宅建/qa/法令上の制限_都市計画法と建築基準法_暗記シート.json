@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "title": "法令上の制限（都市計画法・建築基準法） 暗記シート",
+  "topic": "法令上の制限",
+  "scope": "宅建士試験用：都市計画区域・用途地域・開発許可・接道義務・用途制限・建ぺい率/容積率",
+  "as_of": "2026-07-23",
+  "sources": {
+    "city_law": {
+      "title": "都市計画法（昭和43年法律第100号）",
+      "url": "https://laws.e-gov.go.jp/document?lawid=343AC0000000100",
+      "accessed": "2026-07-23"
+    },
+    "city_rule": {
+      "title": "都市計画法施行令（昭和44年政令第158号）",
+      "url": "https://laws.e-gov.go.jp/document?lawid=344CO0000000158",
+      "accessed": "2026-07-23"
+    },
+    "building_law": {
+      "title": "建築基準法（昭和25年法律第201号）",
+      "url": "https://laws.e-gov.go.jp/document?lawid=325AC0000000201",
+      "accessed": "2026-07-23"
+    },
+    "mlit_city": {
+      "title": "国土交通省 都市計画制度の概要",
+      "url": "https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_tk_000043.html",
+      "accessed": "2026-07-23"
+    }
+  },
+  "items": [
+    {"id": "seigen-001", "category": "都市計画法", "q": "都市計画法の「都市計画区域」とは？", "a": "一体の都市として総合的に整備・開発・保全する必要がある区域として指定される区域。", "source_id": "city_law", "article": "第4条", "related": ["seigen-002"]},
+    {"id": "seigen-002", "category": "都市計画法", "q": "準都市計画区域は何のために指定される？", "a": "都市計画区域外で、将来の開発等を見据え、土地利用の整序など一定の規制を行うために指定される。", "source_id": "city_law", "article": "第4条", "related": ["seigen-001"]},
+    {"id": "seigen-003", "category": "区域区分", "q": "区域区分（線引き）とは？", "a": "都市計画区域を市街化区域と市街化調整区域に区分する制度。", "source_id": "city_law", "article": "第7条", "related": ["seigen-004", "seigen-005"]},
+    {"id": "seigen-004", "category": "区域区分", "q": "市街化区域とは？", "a": "すでに市街地を形成している区域と、おおむね10年以内に優先的・計画的に市街化を図るべき区域。", "source_id": "city_law", "article": "第7条", "related": ["seigen-005"]},
+    {"id": "seigen-005", "category": "区域区分", "q": "市街化調整区域とは？", "a": "市街化を抑制すべき区域。開発行為や建築行為の規制が厳しい。", "source_id": "city_law", "article": "第7条", "related": ["seigen-004", "seigen-012"]},
+    {"id": "seigen-006", "category": "用途地域", "q": "用途地域は何種類か？", "a": "13種類。住居系、商業系、工業系に大別される。", "source_id": "city_law", "article": "第8条・第9条", "related": ["seigen-007"]},
+    {"id": "seigen-007", "category": "用途地域", "q": "用途地域を定める主目的は？", "a": "地域ごとの望ましい土地利用に合わせ、建築物の用途の混在を調整すること。", "source_id": "city_law", "article": "第8条", "related": ["seigen-006", "seigen-020"]},
+    {"id": "seigen-008", "category": "用途地域", "q": "用途地域の指定はどの法律で行い、具体的用途制限はどの法律で定まる？", "a": "指定は都市計画法、建築物用途の具体的制限は建築基準法。", "source_id": "building_law", "article": "第48条", "related": ["seigen-006", "seigen-020"]},
+    {"id": "seigen-009", "category": "開発許可", "q": "開発行為とは？", "a": "主として建築物の建築や特定工作物の建設の用に供する目的で行う土地の区画形質の変更。", "source_id": "city_law", "article": "第4条", "related": ["seigen-010"]},
+    {"id": "seigen-010", "category": "開発許可", "q": "都市計画区域・準都市計画区域で開発行為を行う場合の原則は？", "a": "あらかじめ都道府県知事等の開発許可が必要。", "source_id": "city_law", "article": "第29条", "related": ["seigen-009", "seigen-011"]},
+    {"id": "seigen-011", "category": "開発許可", "q": "市街化区域で許可不要となる規模要件は？", "a": "原則として1000平方メートル未満の開発行為は許可不要。1000平方メートル以上は許可が必要。\n| 規模 | 許可要否 |\n| --- | --- |\n| 1000平方メートル未満 | 原則不要 |\n| 1000平方メートル以上 | 原則必要 |", "source_id": "city_rule", "article": "第19条", "related": ["seigen-012"]},
+    {"id": "seigen-012", "category": "開発許可", "q": "市街化調整区域で規模による許可不要の特例はあるか？", "a": "ない。市街化区域・非線引き区域等の小規模特例とは異なり、規模のみを理由とする除外はない。", "source_id": "city_law", "article": "第29条", "related": ["seigen-005", "seigen-011"]},
+    {"id": "seigen-013", "category": "開発許可", "q": "区域区分未設定の都市計画区域・準都市計画区域で許可不要となる規模要件は？", "a": "原則として3000平方メートル未満。3000平方メートル以上は許可が必要。", "source_id": "city_rule", "article": "第19条", "related": ["seigen-011"]},
+    {"id": "seigen-014", "category": "開発許可", "q": "市街化調整区域の開発許可で重要となる条文は？", "a": "第34条。市街化を抑制する趣旨に沿って、許可できる開発行為の類型が限定される。", "source_id": "city_law", "article": "第34条", "related": ["seigen-005", "seigen-012"]},
+    {"id": "seigen-015", "category": "都市計画制限", "q": "都市計画施設区域内で建築物を建築する場合に必要なものは？", "a": "原則として都道府県知事等の許可。", "source_id": "city_law", "article": "第53条", "related": []},
+    {"id": "seigen-016", "category": "地区計画", "q": "地区計画区域内で建築等を行う場合、事前に求められる代表的手続は？", "a": "地区整備計画等が定められた区域では、着手前の届出が必要。", "source_id": "city_law", "article": "第58条の2", "related": []},
+    {"id": "seigen-017", "category": "建築基準法", "q": "建築基準法第3章（都市計画区域等の規制）の適用区域は？", "a": "都市計画区域と準都市計画区域。", "source_id": "building_law", "article": "第41条の2", "related": ["seigen-001", "seigen-002"]},
+    {"id": "seigen-018", "category": "道路", "q": "建築基準法上、接道義務の基準となる「道路」の最小幅員は？", "a": "原則4メートル以上。", "source_id": "building_law", "article": "第42条", "related": ["seigen-019"]},
+    {"id": "seigen-019", "category": "接道義務", "q": "建築物の敷地は道路に何メートル以上接しなければならない？", "a": "原則2メートル以上。", "source_id": "building_law", "article": "第43条", "related": ["seigen-018"]},
+    {"id": "seigen-020", "category": "用途制限", "q": "用途地域内の建築物の用途制限を定める中心条文は？", "a": "建築基準法第48条（別表第二と連動）。", "source_id": "building_law", "article": "第48条", "related": ["seigen-008"]},
+    {"id": "seigen-021", "category": "用途制限", "q": "用途制限は全国一律で同じか？", "a": "同じではない。指定された用途地域ごとに建築可能・不可の用途が異なる。", "source_id": "building_law", "article": "第48条・別表第二", "related": ["seigen-006", "seigen-020"]},
+    {"id": "seigen-022", "category": "建築確認", "q": "建築物の建築等に際して原則必要な行政手続は？", "a": "建築確認。建築主事または指定確認検査機関の確認を受ける。", "source_id": "building_law", "article": "第6条", "related": ["seigen-010"]},
+    {"id": "seigen-023", "category": "容積率", "q": "容積率の定義は？", "a": "延べ面積の敷地面積に対する割合。", "source_id": "building_law", "article": "第52条", "related": ["seigen-024", "seigen-025"]},
+    {"id": "seigen-024", "category": "建ぺい率", "q": "建ぺい率の定義は？", "a": "建築面積の敷地面積に対する割合。", "source_id": "building_law", "article": "第53条", "related": ["seigen-023", "seigen-025"]},
+    {"id": "seigen-025", "category": "比較", "q": "容積率と建ぺい率の違いは？", "a": "容積率は延べ面積ベース、建ぺい率は建築面積ベース。どちらも分母は敷地面積。\n| 指標 | 分子 | 分母 |\n| --- | --- | --- |\n| 容積率 | 延べ面積 | 敷地面積 |\n| 建ぺい率 | 建築面積 | 敷地面積 |", "source_id": "building_law", "article": "第52条・第53条", "related": ["seigen-023", "seigen-024"]},
+    {"id": "seigen-026", "category": "容積率", "q": "指定容積率と前面道路幅員による容積率制限が競合した場合の扱いは？", "a": "原則として、より厳しい方（小さい方）の容積率制限が適用される。", "source_id": "building_law", "article": "第52条", "related": ["seigen-023"]},
+    {"id": "seigen-027", "category": "高さ制限", "q": "建築基準法で高さ制限の基本条文は？", "a": "第56条。斜線制限等により建築物の高さを規制する。", "source_id": "building_law", "article": "第56条", "related": []},
+    {"id": "seigen-028", "category": "防火地域", "q": "防火地域・準防火地域に関する基本条文は？", "a": "第61条。延焼防止のため、防火設備や構造等の制限が課される。", "source_id": "building_law", "article": "第61条", "related": []},
+    {"id": "seigen-029", "category": "比較", "q": "開発許可と建築確認の違いは？", "a": "開発許可は土地の区画形質変更に対する許可、建築確認は建築計画の法適合確認。", "source_id": "city_law", "article": "第29条", "related": ["seigen-010", "seigen-022"]},
+    {"id": "seigen-030", "category": "比較", "q": "法令上の制限でまず押さえるべき数値2つは？", "a": "接道義務2m以上（建築基準法43条）と、道路の原則幅員4m以上（建築基準法42条）。", "source_id": "building_law", "article": "第42条・第43条", "related": ["seigen-018", "seigen-019"]}
+  ]
+}
