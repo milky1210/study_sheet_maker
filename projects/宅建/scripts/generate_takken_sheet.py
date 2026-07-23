@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import json
 import re
 from pathlib import Path
@@ -21,25 +22,64 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "qa" / "宅建業法_暗記シート.json"
 DEFAULT_OUTPUT = ROOT / "pdf" / "宅建業法_暗記シート.pdf"
 FONT_NAME = "HeiseiKakuGo-W5"
+USAGE_EXAMPLES = """使い方:
+    python3 scripts/generate_takken_sheet.py
+    python3 scripts/generate_takken_sheet.py --input qa/宅建業法_暗記シート.json --output pdf/宅建業法_暗記シート.pdf
+    python3 scripts/generate_takken_sheet.py --input qa/宅建業法01.json --output pdf/宅建業法01.pdf
+"""
 
 
 def read_cards(path: Path) -> tuple[dict, list[dict]]:
-    """Read and minimally validate the canonical Q&A data."""
+    """Read and normalize Q&A data from canonical or simple JSON formats."""
     with path.open(encoding="utf-8") as file:
         data = json.load(file)
 
-    if not isinstance(data.get("items"), list) or not data["items"]:
-        raise ValueError("items must be a non-empty array")
+    if isinstance(data, list):
+        raw_items = data
+        metadata = {
+            "title": path.stem,
+            "scope": "学習項目",
+            "as_of": date.today().isoformat(),
+        }
+    elif isinstance(data, dict):
+        if isinstance(data.get("items"), list):
+            raw_items = data["items"]
+        else:
+            raise ValueError("JSON must be an array or contain a non-empty 'items' array")
+        metadata = {
+            "title": data.get("title") or path.stem,
+            "scope": data.get("scope") or data.get("topic") or "学習項目",
+            "as_of": data.get("as_of") or date.today().isoformat(),
+        }
+    else:
+        raise ValueError("Unsupported JSON root type")
+
+    if not raw_items:
+        raise ValueError("Q&A items must be a non-empty array")
 
     ids: set[str] = set()
-    for index, card in enumerate(data["items"], start=1):
-        for key in ("id", "q", "a", "source_id", "article"):
-            if not isinstance(card.get(key), str) or not card[key].strip():
-                raise ValueError(f"Item {index} must contain a non-empty {key!r}")
-        if card["id"] in ids:
-            raise ValueError(f"Duplicate item id: {card['id']}")
-        ids.add(card["id"])
-    return data, data["items"]
+    normalized_items: list[dict] = []
+    for index, card in enumerate(raw_items, start=1):
+        if not isinstance(card, dict):
+            raise ValueError(f"Item {index} must be an object")
+
+        item_id = card.get("id")
+        question = card.get("q") or card.get("question")
+        answer = card.get("a") or card.get("answer")
+
+        if not isinstance(item_id, str) or not item_id.strip():
+            item_id = f"item-{index:03d}"
+        if not isinstance(question, str) or not question.strip():
+            raise ValueError(f"Item {index} must contain a non-empty question (q/question)")
+        if not isinstance(answer, str) or not answer.strip():
+            raise ValueError(f"Item {index} must contain a non-empty answer (a/answer)")
+
+        if item_id in ids:
+            raise ValueError(f"Duplicate item id: {item_id}")
+        ids.add(item_id)
+        normalized_items.append({"id": item_id, "q": question, "a": answer})
+
+    return metadata, normalized_items
 
 
 def paragraph(text: str, style: ParagraphStyle) -> Paragraph:
@@ -229,7 +269,11 @@ def build_pdf(data: dict, cards: list[dict], output: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(
+        description="宅建のQ&A JSONからA4縦・1:2の暗記シートPDFを生成します。",
+        epilog=USAGE_EXAMPLES,
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT, help="Canonical Q&A JSON path")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Output PDF path")
     args = parser.parse_args()
@@ -241,3 +285,14 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+# 使い方（具体例）
+# 1) デフォルトの入出力を使う
+#    python3 scripts/generate_takken_sheet.py
+#
+# 2) 明示的に入力JSONと出力PDFを指定する（正規スキーマJSON）
+#    python3 scripts/generate_takken_sheet.py --input qa/宅建業法_暗記シート.json --output pdf/宅建業法_暗記シート.pdf
+#
+# 3) ユーザー作成の簡易JSON（question/answer形式）を指定する
+#    python3 scripts/generate_takken_sheet.py --input qa/宅建業法01.json --output pdf/宅建業法01.pdf
