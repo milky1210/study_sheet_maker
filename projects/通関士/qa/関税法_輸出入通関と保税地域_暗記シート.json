@@ -1,0 +1,42 @@
+{
+  "schema_version":"1.0",
+  "title":"関税法：輸出入通関・保税地域 暗記シート",
+  "topic":"関税法",
+  "scope":"通関士試験用：貨物区分、輸出入通関、税関検査、輸出入禁止・規制、保税地域",
+  "as_of":"2026-07-23",
+  "sources":{
+    "law":{"title":"関税法（昭和29年法律第61号）","url":"https://elaws.e-gov.go.jp/document?lawid=329AC0000000061","accessed":"2026-07-23"},
+    "customs":{"title":"財務省・税関 輸出入手続","url":"https://www.customs.go.jp/tsukan/index.htm","accessed":"2026-07-23"},
+    "bonded":{"title":"財務省・税関 保税ポータル","url":"https://www.customs.go.jp/hozei/hozeiportal.html","accessed":"2026-07-23"}
+  },
+  "items":[
+    {"id":"customs-001","category":"貨物区分","q":"外国貨物とは？","a":"輸出の許可を受けた貨物、輸入の許可を受ける前の貨物など、関税法で外国貨物とされる貨物。税関の監督の対象となる。","source_id":"law","article":"第2条","related":["customs-002"]},
+    {"id":"customs-002","category":"貨物区分","q":"内国貨物とは？","a":"外国貨物以外の貨物。輸入許可を受けた貨物は、原則として内国貨物になる。","source_id":"law","article":"第2条","related":["customs-001"]},
+    {"id":"customs-003","category":"輸出通関","q":"貨物を輸出するために必要な手続は？","a":"税関長への輸出申告と輸出許可。申告だけでは輸出できず、許可を受ける必要がある。","source_id":"law","article":"第67条","related":["customs-004"]},
+    {"id":"customs-004","category":"輸入通関","q":"貨物を輸入するために必要な手続は？","a":"税関長への輸入申告と輸入許可。輸入許可前の貨物は外国貨物である。","source_id":"law","article":"第67条","related":["customs-002"]},
+    {"id":"customs-005","category":"輸出通関","q":"輸出申告の相手方は？","a":"税関長。税関に申告し、税関長の許可を受ける。","source_id":"law","article":"第67条","related":["customs-003"]},
+    {"id":"customs-006","category":"輸入通関","q":"輸入申告の相手方は？","a":"税関長。税関に申告し、税関長の許可を受ける。","source_id":"law","article":"第67条","related":["customs-004"]},
+    {"id":"customs-007","category":"輸入通関","q":"輸入許可前の貨物は何貨物か？","a":"外国貨物。輸入許可を受けるまで、内国貨物にはならない。","source_id":"law","article":"第2条","related":["customs-002","customs-004"]},
+    {"id":"customs-008","category":"輸出通関","q":"輸出許可後の貨物は何貨物か？","a":"外国貨物。輸出の許可を受けた貨物は、関税法上の外国貨物に含まれる。","source_id":"law","article":"第2条","related":["customs-001"]},
+    {"id":"customs-009","category":"税関検査","q":"税関長は輸出入申告貨物を検査できるか？","a":"できる。申告された貨物について税関検査を行い、申告内容や法令適合性を確認する。","source_id":"law","article":"第67条","related":["customs-003","customs-004"]},
+    {"id":"customs-010","category":"規制","q":"他法令の許可等が必要な貨物は関税法上の許可だけで輸出入できるか？","a":"できない。他法令の許可・承認・検査等が必要な場合は、その要件も満たす必要がある。","source_id":"law","article":"第70条","related":["customs-011"]},
+    {"id":"customs-011","category":"規制","q":"通関時に確認対象となる他法令の例は？","a":"食品衛生法、植物防疫法、家畜伝染病予防法、薬機法、外為法など。貨物に応じて異なる。","source_id":"customs","article":"輸出入手続・注意事項","related":["customs-010"]},
+    {"id":"customs-012","category":"禁止","q":"関税法は輸入してはならない貨物を定めているか？","a":"定めている。輸入禁止貨物は輸入できず、知的財産侵害物品なども水際取締りの対象となる。","source_id":"law","article":"第69条の11","related":["customs-013"]},
+    {"id":"customs-013","category":"禁止","q":"関税法は輸出してはならない貨物を定めているか？","a":"定めている。輸出禁止貨物は輸出できず、輸出時にも水際取締りが行われる。","source_id":"law","article":"第69条の2","related":["customs-012"]},
+    {"id":"customs-014","category":"保税地域","q":"保税地域の主な目的は？","a":"外国貨物を税関の監督下に置き、関税等の徴収確保と取締りの適正化を図りつつ、貿易を振興すること。","source_id":"bonded","article":"保税地域とは","related":["customs-015"]},
+    {"id":"customs-015","category":"保税地域","q":"保税地域にある外国貨物は誰の監督下に置かれる？","a":"税関。外国貨物は関税徴収の確保と取締りのため、税関の監督下に置かれる。","source_id":"bonded","article":"保税地域とは","related":["customs-014"]},
+    {"id":"customs-016","category":"保税地域","q":"保税地域の5種類は？","a":"指定保税地域、保税蔵置場、保税工場、保税展示場、総合保税地域。各種類で行える行為が異なる。","source_id":"law","article":"第29条以下","related":["customs-017"]},
+    {"id":"customs-017","category":"保税地域","q":"指定保税地域を指定する者は？","a":"財務大臣。外国貨物の積卸し・運搬・蔵置を行う場所として指定する。","source_id":"law","article":"第37条","related":["customs-018"]},
+    {"id":"customs-018","category":"保税地域","q":"保税蔵置場とは？","a":"外国貨物の積卸し・運搬・蔵置を行う場所として、税関長の許可を受けた場所。","source_id":"law","article":"第42条","related":["customs-017"]},
+    {"id":"customs-019","category":"保税地域","q":"保税蔵置場の許可を行う者は？","a":"税関長。財務大臣が指定する指定保税地域とは区別する。","source_id":"law","article":"第42条","related":["customs-017","customs-018"]},
+    {"id":"customs-020","category":"保税地域","q":"保税工場とは？","a":"外国貨物の加工・製造等を行う場所として、税関長の許可を受けた場所。加工・製造に使用する外国貨物も置ける。","source_id":"law","article":"第56条","related":["customs-021"]},
+    {"id":"customs-021","category":"保税地域","q":"保税工場で行う代表的な行為は？","a":"外国貨物の加工・製造。単なる蔵置を主目的とする保税蔵置場と区別する。","source_id":"law","article":"第56条","related":["customs-020"]},
+    {"id":"customs-022","category":"保税地域","q":"保税展示場とは？","a":"博覧会その他これに類する催しで、外国貨物の展示・使用等を行う場所。","source_id":"law","article":"第62条の2","related":["customs-023"]},
+    {"id":"customs-023","category":"保税地域","q":"総合保税地域の特徴は？","a":"外国貨物の蔵置、加工・製造、展示等を一体的に行える保税地域。複数機能を併せ持つ。","source_id":"law","article":"第62条の8","related":["customs-016"]},
+    {"id":"customs-024","category":"保税地域","q":"外国貨物を保税地域で行える代表的な行為は？","a":"積卸し、運搬、蔵置、加工・製造、展示など。具体的に行える行為は保税地域の種類で異なる。","source_id":"bonded","article":"保税地域とは","related":["customs-016"]},
+    {"id":"customs-025","category":"比較","q":"指定保税地域と保税蔵置場の違いは？","a":"指定保税地域は財務大臣が指定する場所、保税蔵置場は税関長の許可を受ける場所。どちらも外国貨物の積卸し・運搬・蔵置に用いる。","source_id":"law","article":"第37条・第42条","related":["customs-017","customs-018"]},
+    {"id":"customs-026","category":"比較","q":"保税蔵置場と保税工場の主な違いは？","a":"保税蔵置場は外国貨物の蔵置が中心、保税工場は外国貨物の加工・製造等を行う。","source_id":"law","article":"第42条・第56条","related":["customs-018","customs-020"]},
+    {"id":"customs-027","category":"比較","q":"輸入許可と輸出許可の共通点は？","a":"いずれも税関長への申告後に受ける許可。申告だけで手続は完結しない。","source_id":"law","article":"第67条","related":["customs-003","customs-004"]},
+    {"id":"customs-028","category":"比較","q":"輸入許可と輸出許可で貨物区分はどう変わる？","a":"輸入許可前の貨物と輸出許可後の貨物は外国貨物。輸入許可後の貨物は原則として内国貨物。","source_id":"law","article":"第2条","related":["customs-002","customs-007","customs-008"]}
+  ]
+}

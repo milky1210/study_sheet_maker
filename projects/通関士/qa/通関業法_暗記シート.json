@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "title": "通関業法 暗記シート",
+  "topic": "通関業法",
+  "scope": "通関士試験用：通関業・許可・通関業者・通関士・料金・帳簿・監督",
+  "as_of": "2026-07-23",
+  "sources": {
+    "law": {"title":"通関業法（昭和42年法律第122号）","url":"https://elaws.e-gov.go.jp/document?lawid=342AC0000000122","accessed":"2026-07-23"},
+    "order": {"title":"通関業法施行令（昭和42年政令第237号）","url":"https://elaws.e-gov.go.jp/document?lawid=342CO0000000237","accessed":"2026-07-23"},
+    "customs": {"title":"財務省・税関 通関士試験","url":"https://www.customs.go.jp/tsukanshi/index.htm","accessed":"2026-07-23"}
+  },
+  "items": [
+    {"id":"tsukan-001","category":"定義","q":"通関業とは？","a":"他人の依頼を受け、報酬を得て、業として通関業務を行うこと。自らの貨物の手続だけでは通関業に当たらない。","source_id":"law","article":"第2条","related":["tsukan-002","tsukan-005"]},
+    {"id":"tsukan-002","category":"定義","q":"通関業務に含まれる代表的な業務は？","a":"輸出入申告等の代理、申告書等の作成、不服申立ての代理など。他人の依頼を受けて行う税関手続に関する業務である。","source_id":"law","article":"第2条","related":["tsukan-001"]},
+    {"id":"tsukan-003","category":"定義","q":"輸出入申告等の代理とは？","a":"依頼者に代わり、税関に対して輸出入申告その他の通関手続をすること。通関業務の一つである。","source_id":"law","article":"第2条","related":["tsukan-002"]},
+    {"id":"tsukan-004","category":"定義","q":"通関書類の作成は通関業務に含まれるか？","a":"含まれる。他人の依頼を受けて行う申告書等の作成は、通関業務に含まれる。","source_id":"law","article":"第2条","related":["tsukan-002"]},
+    {"id":"tsukan-005","category":"定義","q":"自らの貨物の通関手続は通関業に当たるか？","a":"当たらない。他人の依頼を受け、報酬を得て行うという要件を満たさないからである。","source_id":"law","article":"第2条","related":["tsukan-001"]},
+    {"id":"tsukan-006","category":"許可","q":"通関業を営むために必要な行政処分は？","a":"税関長の許可。通関業を営もうとする地を管轄する税関長から受ける。","source_id":"law","article":"第3条","related":["tsukan-007"]},
+    {"id":"tsukan-007","category":"許可","q":"通関業の許可を行う者は？","a":"通関業を営もうとする地を管轄する税関長。国土交通大臣や財務大臣ではない。","source_id":"law","article":"第3条","related":["tsukan-006"]},
+    {"id":"tsukan-008","category":"許可","q":"通関業の許可に有効期間はあるか？","a":"ない。更新制ではないが、違反等があれば業務停止や許可取消しの対象となる。","source_id":"law","article":"第3条以下","related":["tsukan-024"]},
+    {"id":"tsukan-009","category":"許可","q":"通関業の許可基準で審査される代表的な事項は？","a":"欠格事由に該当しないこと、通関業を営むための基礎を有することなど。具体的な要件は法令で確認する。","source_id":"law","article":"第5条・第6条","related":["tsukan-006"]},
+    {"id":"tsukan-010","category":"許可","q":"許可に係る事項を変更する場合の手続は？","a":"変更内容に応じて、あらかじめ許可を受けるか、税関長へ届け出る。許可事項と届出事項を混同しない。","source_id":"law","article":"第8条以下","related":["tsukan-006"]},
+    {"id":"tsukan-011","category":"通関業者","q":"通関業者は料金表をどこに掲示する？","a":"営業所。依頼者が料金を確認できるよう、料金表を掲示しなければならない。","source_id":"law","article":"第18条","related":["tsukan-012"]},
+    {"id":"tsukan-012","category":"通関業者","q":"通関業務に関する帳簿の保存期間は？","a":"帳簿の閉鎖後3年間。営業所に備え付けて保存する。","source_id":"law","article":"第22条","related":["tsukan-011"]},
+    {"id":"tsukan-013","category":"通関業者","q":"通関業務で知り得た秘密を漏らしてよいか？","a":"漏らしてはならない。通関業者、その役員・従業者には守秘義務があり、退職後も同様である。","source_id":"law","article":"第19条","related":["tsukan-014"]},
+    {"id":"tsukan-014","category":"通関業者","q":"通関業者は他人に自己の名義を使わせられるか？","a":"使わせられない。他人に自己の名義で通関業を営ませる名義貸しは禁止される。","source_id":"law","article":"第20条","related":["tsukan-013"]},
+    {"id":"tsukan-015","category":"通関士","q":"通関業者が通関士を置く単位は？","a":"通関業務を行う営業所ごと。通関業者は各営業所に通関士を置かなければならない。","source_id":"law","article":"第13条","related":["tsukan-016"]},
+    {"id":"tsukan-016","category":"通関士","q":"通関士試験に合格しただけで通関士業務に従事できるか？","a":"できない。合格者は税関長の確認を受けて、通関業務に従事する資格を得る。","source_id":"law","article":"第31条","related":["tsukan-015"]},
+    {"id":"tsukan-017","category":"通関士","q":"通関士の主な職務は？","a":"通関書類の審査と、その書類に記載された内容の審査。審査した通関書類には記名する。","source_id":"law","article":"第14条","related":["tsukan-018"]},
+    {"id":"tsukan-018","category":"通関士","q":"通関士は審査した通関書類に何をする？","a":"記名する。単に書類を作成するだけでなく、書類と記載内容を審査する職務がある。","source_id":"law","article":"第14条","related":["tsukan-017"]},
+    {"id":"tsukan-019","category":"通関士","q":"通関士への代表的な懲戒処分は？","a":"戒告または2年以内の通関業務従事停止。通関業者に対する許可取消しとは区別する。","source_id":"law","article":"第34条","related":["tsukan-024"]},
+    {"id":"tsukan-020","category":"通関士","q":"通関士への懲戒処分を行う者は？","a":"税関長。通関士が通関業法に違反するなど、法定の事由がある場合に行う。","source_id":"law","article":"第34条","related":["tsukan-019"]},
+    {"id":"tsukan-021","category":"監督","q":"通関業者に対する代表的な監督処分は？","a":"必要な措置の命令、通関業務の停止、許可の取消し。違反の態様に応じて行われる。","source_id":"law","article":"第35条・第36条","related":["tsukan-024"]},
+    {"id":"tsukan-022","category":"監督","q":"通関業者の許可を取り消すことがあるのはどんな場合？","a":"法令違反や許可要件を欠くに至った場合など。取消しは税関長による通関業者への処分である。","source_id":"law","article":"第35条・第36条","related":["tsukan-021"]},
+    {"id":"tsukan-023","category":"監督","q":"通関業者への処分と通関士への処分の違いは？","a":"通関業者には業務停止・許可取消し等、通関士には戒告・従事停止等。対象となる者と処分内容が異なる。","source_id":"law","article":"第34条以下","related":["tsukan-019","tsukan-021"]},
+    {"id":"tsukan-024","category":"監督","q":"通関業の許可に有効期間がないことと監督処分の関係は？","a":"更新は不要でも、許可が永久に保障されるわけではない。違反等があれば停止や取消しの対象となる。","source_id":"law","article":"第3条・第35条以下","related":["tsukan-008","tsukan-021"]}
+  ]
+}
